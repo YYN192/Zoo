@@ -1,0 +1,12 @@
+Species: Eagle
+Weight: 15 kg
+Habitat: Mountains
+Diet: Carnivore
+Endangered: No
+
+Species: Bear 
+Weight: 200 kg
+Habitat: Forest
+Diet: Omnivore 
+Endangered: Yes
+
