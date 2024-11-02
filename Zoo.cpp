@@ -21,13 +21,13 @@ public:
         endangered = true;
     }
 
-    // Parameterized constructor
+    // constructor
     Animal(std::string newspecies, double newWeight, std::string newHabitat, std::string newdiet, bool newendangered) {
         species = newspecies;
-        weight = newWeight;
+        setWeight(newWeight);
         habitat = newHabitat;
-        diet = newdiet;
-        endangered = newendangered;
+        setDiet(newdiet);
+        setEndangered(newendangered);
     }
 
     // Getters
@@ -36,6 +36,32 @@ public:
     std::string getHabitat() const { return habitat; }
     std::string getDiet() const { return diet; }
     bool isEndangered() const { return endangered; }
+
+    // Setter for weight
+    void setWeight(double newWeight) {
+        if (newWeight > 0) {
+            weight = newWeight;
+        }
+        else {
+            std::cerr << "Weight must be positive.\n";
+        }
+    }
+
+    // Setter for diet
+    void setDiet(std::string& newDiet) {
+        if (!newDiet.empty()) {
+            diet = newDiet;
+        }
+        else {
+            std::cerr << "Diet cannot be empty.\n";
+        }
+    }
+
+    // Setter for endangered status
+    void setEndangered(bool newEndangered) {
+        endangered = newEndangered;
+    }
+
 };
 
 // Function to input animal details from the user
@@ -112,6 +138,7 @@ int main() {
     displayArt();
     Animal newAnimal;
     char repeat = 'y';
+
 
     while (repeat == 'y' || repeat == 'Y') {
         inputAnimalDetails(newAnimal);

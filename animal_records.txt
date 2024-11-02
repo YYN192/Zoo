@@ -1,12 +1,18 @@
-Species: Eagle
-Weight: 15 kg
+Species: African Elephant
+Weight: 6000 kg
+Habitat: Savanna
+Diet: Herbivore
+Endangered: Yes
+
+Species: Siberian Tiger
+Weight: 220 kg
+Habitat: Forest
+Diet: Carnivore
+Endangered: Yes
+
+Species: Bald Eagle
+Weight: 6.5 kg
 Habitat: Mountains
 Diet: Carnivore
 Endangered: No
-
-Species: Bear 
-Weight: 200 kg
-Habitat: Forest
-Diet: Omnivore 
-Endangered: Yes
 
