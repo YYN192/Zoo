@@ -1,2 +1,13 @@
-﻿  Zoo.cpp
-  Zoo.vcxproj -> C:\Users\isvor\source\repos\Zoo\x64\Debug\Zoo.exe
+﻿  Main.cpp
+  Reader.cpp
+  Zoo.cpp
+  ZooUtils.cpp
+  Generating Code...
+Reader.obj : error LNK2005: main already defined in Main.obj
+Zoo.obj : error LNK2005: main already defined in Main.obj
+ZooUtils.obj : error LNK2005: "void __cdecl countAnimalsAndSave(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?countAnimalsAndSave@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) already defined in Zoo.obj
+ZooUtils.obj : error LNK2005: "void __cdecl displayAnimalDetails(class Animal const &)" (?displayAnimalDetails@@YAXAEBVAnimal@@@Z) already defined in Zoo.obj
+ZooUtils.obj : error LNK2005: "void __cdecl displayArt(void)" (?displayArt@@YAXXZ) already defined in Zoo.obj
+ZooUtils.obj : error LNK2005: "void __cdecl inputAnimalDetails(class Animal &)" (?inputAnimalDetails@@YAXAEAVAnimal@@@Z) already defined in Zoo.obj
+ZooUtils.obj : error LNK2005: "void __cdecl saveAnimalToFile(class Animal const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?saveAnimalToFile@@YAXAEBVAnimal@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) already defined in Zoo.obj
+C:\Users\isvor\source\repos\Zoo\x64\Debug\Zoo.exe : fatal error LNK1169: one or more multiply defined symbols found

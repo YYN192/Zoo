@@ -1,70 +1,9 @@
+// ZooUtils.cpp
 #include <iostream>
 #include <fstream>
-#include <string>
-#include "Animal.h"
+#include "ZooUtils.h"
 
-// NoArgs constructor
-Animal::Animal() : species("NULL"), weight(0), habitat("NULL"), diet("NULL"), endangered(true) {}
-
-// Parameterized constructor
-Animal::Animal(const std::string& newspecies, double newWeight, const std::string& newHabitat,
-    const std::string& newDiet, bool newEndangered) {
-    setSpecies(newspecies);
-    setWeight(newWeight);
-    setHabitat(newHabitat);
-    setDiet(newDiet);
-    setEndangered(newEndangered);
-}
-
-// Getters
-std::string Animal::getSpecies() const { return species; }
-double Animal::getWeight() const { return weight; }
-std::string Animal::getHabitat() const { return habitat; }
-std::string Animal::getDiet() const { return diet; }
-bool Animal::isEndangered() const { return endangered; }
-
-// Setters with validation
-void Animal::setSpecies(const std::string& newSpecies) {
-    if (!newSpecies.empty()) {
-        species = newSpecies;
-    }
-    else {
-        std::cerr << "Species cannot be empty.\n";
-    }
-}
-
-void Animal::setWeight(double newWeight) {
-    if (newWeight > 0) {
-        weight = newWeight;
-    }
-    else {
-        std::cerr << "Weight must be positive.\n";
-    }
-}
-
-void Animal::setHabitat(const std::string& newHabitat) {
-    if (!newHabitat.empty()) {
-        habitat = newHabitat;
-    }
-    else {
-        std::cerr << "Habitat cannot be empty.\n";
-    }
-}
-
-void Animal::setDiet(const std::string& newDiet) {
-    if (!newDiet.empty()) {
-        diet = newDiet;
-    }
-    else {
-        std::cerr << "Diet cannot be empty.\n";
-    }
-}
-
-void Animal::setEndangered(bool newEndangered) {
-    endangered = newEndangered;
-}
-
-// Function to input animal details from the user
+// Function to input animal details
 void inputAnimalDetails(Animal& animal) {
     std::cout << "Enter Species: ";
     std::string newspecies;
@@ -100,7 +39,7 @@ void displayAnimalDetails(const Animal& animal) {
     std::cout << "Weight: " << animal.getWeight() << " kg" << std::endl;
     std::cout << "Habitat: " << animal.getHabitat() << std::endl;
     std::cout << "Diet: " << animal.getDiet() << std::endl;
-    std::cout << "Endangered: " << (animal.isEndangered() ? "Yes" : "No") << std::endl; // Display endangered status
+    std::cout << "Endangered: " << (animal.isEndangered() ? "Yes" : "No") << std::endl;
 }
 
 // Function to save animal details to a file
@@ -149,7 +88,7 @@ void countAnimalsAndSave(const std::string& filename) {
     }
 }
 
-// Display ASCII art
+// Function to display ASCII art
 void displayArt() {
     std::cout <<
         " _______  _______  _______  _        _______  _______  _________           \n"
@@ -160,24 +99,4 @@ void displayArt() {
         "  /   /  | |   | || |   | || |      | |   | || | \\_  )   | |    / ( ) \\  \n"
         " /   (_/\\| (___) || (___) || (____/\\| (___) || (___) |___) (___( /   \\ ) \n"
         "(_______/(_______)(_______)(_______/(_______)(_______)\\_______/|/     \\| \n";
-}
-
-int main() {
-    displayArt();
-    Animal newAnimal;
-    char repeat = 'y';
-
-
-    while (repeat == 'y' || repeat == 'Y') {
-        inputAnimalDetails(newAnimal);
-        displayAnimalDetails(newAnimal);
-        saveAnimalToFile(newAnimal, "animal_records.txt");
-        countAnimalsAndSave("animal_records.txt");
-
-        std::cout << "\nAdd another animal? (y/n): ";
-        std::cin >> repeat;
-        std::cin.ignore(); // Ignore the newline left in input buffer
-    }
-
-    return 0;
 }

@@ -16,3 +16,15 @@ Habitat: Mountains
 Diet: Carnivore
 Endangered: No
 
+Species: Snow Leopard
+Weight: 55 kg
+Habitat: Mountains
+Diet: Carnivore
+Endangered: Yes
+
+Species: Red Fox
+Weight: 6.2 kg
+Habitat: Forest 
+Diet: Omnivore
+Endangered: No
+

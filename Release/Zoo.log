@@ -1,0 +1,2 @@
+﻿Zoo.obj : error LNK2005: _main already defined in Reader.obj
+C:\Users\isvor\source\repos\Zoo\Release\Zoo.exe : fatal error LNK1169: one or more multiply defined symbols found
